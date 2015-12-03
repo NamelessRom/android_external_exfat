@@ -21,15 +21,15 @@
 #include <stdio.h>
 #include <string.h>
 
-extern int mkexfatfs_main(int argc, char* argv[]);
-extern int exfatfsck_main(int argc, char* argv[]);
+extern int mkfs_exfat_main(int argc, char* argv[]);
+extern int fsck_exfat_main(int argc, char* argv[]);
 extern int mount_exfat_main(int argc, char* argv[]);
 
 int main(int argc, char* argv[])
 {
     if (strstr(argv[0], "mkfs.exfat") != 0)
-        return mkexfatfs_main(argc, argv);
+        return mkfs_exfat_main(argc, argv);
     if (strstr(argv[0], "fsck.exfat") != 0)
-        return exfatfsck_main(argc, argv);
+        return fsck_exfat_main(argc, argv);
     return mount_exfat_main(argc, argv);
 }
